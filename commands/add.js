@@ -4,9 +4,10 @@ const addFunction = (toAdd) => {
 
     fs.exists('task.json', (exists) => {
         if(exists) {
-            fs.readFile('task.json', function readFileCallback(err, data) {
+            fs.readFile('task.json', function(err, data) {
                 if(err) {
                     console.log(err)
+                    process.exit(1)
                 } else {
                     let addObject = {}
                     let counter
